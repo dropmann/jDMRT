@@ -1,0 +1,72 @@
+---
+name:  anovaDuncan
+title: Duncan's Multiple Range Test
+menuGroup: DMRT
+version: '1.0.0'
+jas: '1.2'
+addonFor: 'jmv::anova'
+export: false
+
+description:
+    main: >-
+      Adds Duncan's multiple range test (DMRT) group letters, and a Mean ± S.D.
+      report table, to jamovi's ANOVA. The dependent variable, factors and
+      model terms are the ANOVA's; for an RCBD, add the block as a factor and
+      leave its interactions out of the model terms.
+
+options:
+    - name: duncanTerms
+      title: Terms
+      type: Terms
+      default:
+      description: >-
+        the model terms to give Duncan's group letters for.
+
+    - name: alpha
+      title: Significance level (α)
+      type: Number
+      min: 0.001
+      max: 0.5
+      default: 0.05
+
+    - name: requireSignificantF
+      title: Show letters only if the term's F-test is significant
+      type: Bool
+      default: true
+
+    - name: descriptives
+      title: Show N and S.D.
+      type: Bool
+      default: true
+
+    - name: meanType
+      title: Means (unbalanced designs)
+      type: List
+      options:
+        - name: adjusted
+          title: Least-squares (recommended)
+        - name: raw
+          title: Raw means (agricolae)
+      default: adjusted
+
+    - name: reportTable
+      title: Report table (Mean ± S.D. with letters)
+      type: Bool
+      default: false
+
+    - name: decimals
+      title: Decimal places
+      type: List
+      options:
+        - name: auto
+          title: Auto (2; 3 if below 1)
+        - name: '1'
+          title: '1'
+        - name: '2'
+          title: '2'
+        - name: '3'
+          title: '3'
+        - name: '4'
+          title: '4'
+      default: auto
+...

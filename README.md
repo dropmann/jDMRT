@@ -16,6 +16,16 @@ and food/sensory research.
 Means sharing a letter are not significantly different at the chosen α.
 If the term's ANOVA F-test is not significant, letters are suppressed (`ns`) — this can be switched off.
 
+## As part of jamovi's ANOVA
+jDMRT also adds a **Duncan's Multiple Range Test** section to the options of jamovi's own
+**ANOVA** (ANOVA → *Duncan's Multiple Range Test*, at the end of its options):
+1. Set up the ANOVA as usual. For an RCBD, add the block as a fixed factor and take its
+   interactions out of the **Model** terms.
+2. In *Duncan's Multiple Range Test*, move the terms to give letters for into the box.
+   The terms offered are the ANOVA's model terms.
+3. The Duncan tables, and the optional report table, follow the ANOVA's own results.
+   A term's F-test is the one in the ANOVA's table, so it follows its choice of sums of squares.
+
 ## Example data
 Two simulated datasets ship with the module (jamovi: Open → Data Library → *jDMRT*):
 - **Rice RCBD** — 5 varieties × 6 blocks with two plots missing (unbalanced). Dependent *Yield*,

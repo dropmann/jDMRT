@@ -22,6 +22,16 @@ analyses:
       ANOVA (one-way, RCBD or factorial, optional block) with Duncan's multiple
       range test group letters and a Mean ± S.D. report table.
     category: analyses
+  - title: Duncan's Multiple Range Test
+    name: anovaDuncan
+    ns: jDMRT
+    menuGroup: DMRT
+    menuTitle: Duncan's Multiple Range Test
+    description: >-
+      Adds Duncan's multiple range test group letters, and a Mean ± S.D. report
+      table, to jamovi's ANOVA.
+    addonFor: 'jmv::anova'
+    category: analyses
 usesNative: true
 minApp: 1.0.8
 datasets:

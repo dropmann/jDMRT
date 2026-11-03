@@ -1,0 +1,56 @@
+---
+name:  anovaDuncan
+title: Duncan's Multiple Range Test
+jrs: '1.1'
+
+# these are moved into the ANOVA's results, see R/anovaduncan.b.R. parent:<name>
+# names the ANOVA's options
+
+items:
+    - name: duncanTables
+      title: Duncan's Multiple Range Test
+      type: Array
+      items: (duncanTerms)
+      refs: [duncan1955, kramer1956, agricolae, emmeans]
+      template:
+          title: ''
+          type: Table
+          rows: 0
+          clearWith: [parent:dep, parent:factors, parent:modelTerms, parent:ss, duncanTerms, alpha, requireSignificantF, meanType]
+          columns:
+            - name: n
+              title: N
+              type: integer
+              visible: (descriptives)
+            - name: sd
+              title: SD
+              type: number
+              visible: (descriptives)
+            - name: mean
+              title: Mean
+              type: number
+            - name: letter
+              title: Group
+              type: text
+
+    - name: duncanReport
+      title: Report table
+      type: Table
+      rows: 0
+      visible: (reportTable)
+      refs: [duncan1955, agricolae]
+      clearWith: [parent:dep, parent:factors, parent:modelTerms, parent:ss, duncanTerms, alpha, requireSignificantF, meanType, decimals]
+      columns:
+        - name: part
+          title: ''
+          type: text
+        - name: level
+          title: ''
+          type: text
+        - name: n
+          title: N
+          type: integer
+        - name: value
+          title: Mean ± S.D.
+          type: text
+...

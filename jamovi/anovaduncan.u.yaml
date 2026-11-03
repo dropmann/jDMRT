@@ -1,0 +1,41 @@
+title: Duncan's Multiple Range Test
+name: anovaDuncan
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: Supplier
+    name: duncanSupplier
+    persistentItems: false
+    stretchFactor: 1
+    format: term
+    children:
+      - type: TargetLayoutBox
+        label: ''
+        children:
+          - type: ListBox
+            name: duncanTerms
+            isTarget: true
+            template:
+              type: TermLabel
+  - type: LayoutBox
+    margin: large
+    children:
+      - type: TextBox
+        name: alpha
+        format: number
+      - type: CheckBox
+        name: requireSignificantF
+      - type: CheckBox
+        name: descriptives
+      - type: ComboBox
+        name: meanType
+  - type: LayoutBox
+    margin: large
+    children:
+      - type: CheckBox
+        name: reportTable
+        children:
+          - type: ComboBox
+            name: decimals
+            enable: (reportTable)
